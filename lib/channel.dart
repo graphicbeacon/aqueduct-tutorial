@@ -1,5 +1,7 @@
 import 'dart:io';
 
+import 'package:fave_reads/controller/reads_controller.dart';
+
 import 'fave_reads.dart';
 
 /// This type initializes an application.
@@ -30,10 +32,8 @@ class FaveReadsChannel extends ApplicationChannel {
     final router = Router();
 
     // Prefer to use `link` instead of `linkFunction`.
-    // See: https://aqueduct.io/docs/http/request_controller/
-    router.route("/example").linkFunction((request) async {
-      return Response.ok({"key": "value"});
-    });
+    // See: https://aqueduct.io/docs/http/controller/
+    router.route("/reads/[:id]").link(() => ReadsController());
 
     router.route('/').linkFunction((request) =>
         Response.ok('Hello, World!')..contentType = ContentType.html);
