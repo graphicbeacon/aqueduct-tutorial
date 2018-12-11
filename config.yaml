@@ -1,0 +1,15 @@
+database:
+  host: $DB_HOST # environment variables
+  port: $DB_PORT
+  username: $DB_USER
+  password: $DB_PASSWORD
+  databaseName: $DB_NAME
+##
+## For your reference
+## Don't commit the below in your version control ;)
+# database:
+#   host: localhost
+#   port: 5432
+#   username: fave_reads_user
+#   password: password
+#   databaseName: fave_reads_official
